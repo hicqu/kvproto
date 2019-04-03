@@ -21,7 +21,8 @@ prost = { version = "0.4", optional = true }
 prost-derive = { version = "0.4", optional = true }
 bytes = { version = "0.4.11", optional = true }
 futures = "0.1"
-grpcio = "0.4"
+# grpcio = "0.4"
+grpcio = { path = "/home/qupeng/github.com/pingcap/grpc-rs" }
 raft = "0.4"
 
 [build-dependencies]
