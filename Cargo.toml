@@ -24,6 +24,18 @@ futures = "0.1"
 grpcio = "0.4"
 raft = "0.4"
 
+# for tower-grpc
+tower-hyper = { git = "https://github.com/tower-rs/tower-hyper" }
+tower-request-modifier = { git = "https://github.com/tower-rs/tower-http" }
+
+[dependencies.tower-grpc]
+git = "https://github.com/hicqu/tower-grpc"
+branch = "protobuf-instead-prost"
+
+[dependencies.tower-grpc-build]
+path = "/home/qupeng/github.com/tower-rs/tower-grpc/tower-grpc-build"
+features = ["tower-hyper"]
+
 [build-dependencies]
 protobuf-build = "0.1"
 
@@ -31,3 +43,7 @@ protobuf-build = "0.1"
 [replace]
 "protobuf-codegen:2.0.6" = { git = "https://github.com/pingcap/rust-protobuf.git", rev = "d9dc5ba0d8ecdc32dfd52c0edd06a98bbcd96b4e" }
 "protobuf:2.0.6" = { git = "https://github.com/pingcap/rust-protobuf.git", rev = "d9dc5ba0d8ecdc32dfd52c0edd06a98bbcd96b4e" }
+
+[[bin]]
+name = "tower-grpc-codegen"
+path = "src/tower-grpc-codegen.rs"

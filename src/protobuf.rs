@@ -20,3 +20,4 @@ pub mod raft_cmdpb;
 pub mod raft_serverpb;
 pub mod tikvpb;
 pub mod tikvpb_grpc;
+pub mod tower_grpc_tikvpb;
